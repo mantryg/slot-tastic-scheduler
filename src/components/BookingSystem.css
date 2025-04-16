@@ -63,11 +63,28 @@
   color: #666;
 }
 
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+}
+
 .slot-row {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
-  align-items: center;
+  align-items: flex-end;
+}
+
+.date-field, .time-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .date-input {
@@ -76,14 +93,40 @@
   border: 1px solid #ccc;
   border-radius: 50px;
   font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
 }
 
-.time-input {
-  flex: 1.5;
+.calendar-icon {
+  color: #666;
+  margin-left: 5px;
+}
+
+.calendar-popover {
+  z-index: 100;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-component {
+  border-radius: 10px;
+}
+
+.time-select {
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 50px;
   font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
 }
 
 .action-btn {
@@ -99,6 +142,7 @@
   font-size: 18px;
   line-height: 1;
   padding: 0;
+  align-self: center;
 }
 
 .remove-btn {
@@ -112,6 +156,11 @@
 
 .add-btn {
   color: #4dabf7;
+}
+
+.same-time-group {
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .save-btn {
@@ -160,6 +209,7 @@
   background-position: center;
 }
 
+/* Keep the existing icon styles */
 .dashboard-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 24 24'%3E%3Cpath d='M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z'/%3E%3C/svg%3E");
 }
@@ -178,4 +228,64 @@
 
 .implant-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 24 24'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 7h-2v2h2v2h-2v2h2v2H8V7h4v3zm4 8h-2V7h2v11z'/%3E%3C/svg%3E");
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 480px) {
+  .booking-container {
+    border-radius: 20px;
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .booking-form {
+    padding: 15px;
+  }
+  
+  .slot-row {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  
+  .date-field, .time-field {
+    width: 100%;
+  }
+  
+  .mobile-label {
+    font-weight: bold;
+  }
+  
+  .action-btn {
+    position: absolute;
+    right: 0;
+  }
+  
+  .add-btn {
+    bottom: 10px;
+  }
+  
+  .remove-btn {
+    bottom: 45px;
+  }
+  
+  .bottom-nav {
+    padding: 8px 5px;
+  }
+  
+  .nav-item span {
+    font-size: 10px;
+  }
+  
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .save-btn {
+    width: 100%;
+  }
 }
